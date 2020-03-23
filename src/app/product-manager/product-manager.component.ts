@@ -11,7 +11,9 @@ import { ProductService } from "../product.service";
 export class ProductManagerComponent implements OnInit {
   products = data;
   selected: Product;
-  constructor(private productService: ProductService) {}
+  constructor(
+    // private productService: ProductService
+    ) {}
 
   ngOnInit(): void {
     console.log(this.selected);
@@ -23,8 +25,5 @@ export class ProductManagerComponent implements OnInit {
   removeItem(id) {
     this.products = this.products.filter(x => x.id !== id);
     console.log(id); 
-  }
-  addProduct() {
-    this.productService.getLink('manager');
   }
 }
